@@ -3,10 +3,10 @@ FROM ubuntu:22.04
 RUN apt-get update && \
     apt-get install -y shellinabox && \
     apt-get clean && \
-    rm -rf /var/lib/apt/lists/* /temp/* /var/tmp/* && \
+    rm -rf /var/lib/apt/lists/* /temp/* /var/tmp/*
 
-    RUN echo 'root:6f4c35e084c' | chpasswd
+RUN echo 'root:6f4c35e084c' | chpasswd
 
-    EXPOSE 22
+EXPOSE 22
 
-    CMD ["/usr/bin/shellinaboxd", "-t", "-s", "/:LOGIN"]
+CMD ["/usr/bin/shellinaboxd", "-t", "-s", "/:LOGIN"]
